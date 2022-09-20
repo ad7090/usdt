@@ -1,8 +1,12 @@
 
 
 
-pragma solidity >=0.4.20;
-import "https://github.com/NomicFoundation/hardhat/blob/main/packages/hardhat-core/console.sol";
+/**
+ *Submitted for verification at Etherscan.io on 2017-11-28
+*/
+
+pragma solidity ^0.4.17;
+
 /**
  * @title SafeMath
  * @dev Math operations with safety checks that throw on error
@@ -196,7 +200,7 @@ contract StandardToken is BasicToken, ERC20 {
     * @param _value The amount of tokens to be spent.
     */
     function approve(address _spender, uint _value) public onlyPayloadSize(2 * 32) {
-console.log('He');
+
         // To change the approve amount you first have to reduce the addresses`
         //  allowance to zero by calling `approve(_spender, 0)` if it is not
         //  already 0 to mitigate the race condition described here:
@@ -319,7 +323,13 @@ contract TetherToken is Pausable, StandardToken, BlackList {
     address public upgradedAddress;
     bool public deprecated;
 
-   
+    //  The contract can be initialized with a number of tokens
+    //  All the tokens are deposited to the owner address
+    //
+    // @param _balance Initial supply of the contract
+    // @param _name Token Name
+    // @param _symbol Token symbol
+    // @param _decimals Token decimals
     function TetherToken(uint _initialSupply, string _name, string _symbol, uint _decimals) public {
         _totalSupply = _initialSupply;
         name = _name;
