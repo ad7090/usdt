@@ -1,7 +1,7 @@
 
 
 
-pragma solidity ^0.4.0;
+pragma solidity >=0.4.20;
 import "https://github.com/NomicFoundation/hardhat/blob/main/packages/hardhat-core/console.sol";
 /**
  * @title SafeMath
